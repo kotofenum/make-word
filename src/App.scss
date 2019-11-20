@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+
+  .App-header {
+    background-color: #282c34;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+
+    h1 {
+      padding: 40px;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        transition: .4s ease-out;
+        top: 0;
+        left: 0;
+        transform: rotate(0deg);
+      }
+
+      &:not(:hover) {
+        .w {
+          top: 5px;
+        }
+
+        .o {
+          top: -13px;
+          left: 2px;
+          display: inline-block;
+          transform: rotate(-32deg);
+        }
+
+        .r {
+          top: 20px;
+          right: 12px;
+          display: inline-block;
+          transform: rotate(12deg);
+        }
+
+        .d {
+          top: 4px;
+          left: 6px;
+          font-size: 64px;
+          display: inline-block;
+          transform: rotate(6deg);
+        }
+      }
+    }
+  }
+}

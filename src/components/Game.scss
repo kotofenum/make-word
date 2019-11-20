@@ -1,0 +1,14 @@
+.Game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 34px;
+    color: #313132;
+  }
+
+  .Game-word {
+    display: flex;
+  }
+}
