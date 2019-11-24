@@ -3,8 +3,13 @@ import "./Letter.scss";
 
 function Letter(props) {
   return (
-    <div className="Letter">
-      <span>{props.letter}</span>
+    <div
+      className={"Letter " + (props.letter.selected ? "selected" : "")}
+      onClick={() => {
+        if (!props.letter.selected) props.onSelectLetter(props.letter);
+      }}
+    >
+      <span>{props.letter.char}</span>
     </div>
   );
 }

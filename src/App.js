@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 
 import Game from "./components/Game";
 
 function App() {
+  const [letters, setLetters] = useState([]);
+
+  useEffect(() => {
+    const randomizedLetters = "develop"
+      .split("")
+      .sort(() => Math.random() - 0.5);
+
+    setLetters(
+      randomizedLetters.map((letter, idx) => ({
+        char: letter,
+        selected: false,
+        idx
+      }))
+    );
+  }, []);
+
+  const onSelectLetter = letter => {
+    setLetters(letters.map(l => (l.idx === letter.idx ? letter : l)));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +36,7 @@ function App() {
         </h1>
       </header>
       <main>
-        <Game word="develop" />
+        <Game originalWord="develop" letters={letters} onSelectLetter={onSelectLetter} />
       </main>
     </div>
   );
